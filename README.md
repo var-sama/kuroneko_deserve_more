@@ -1,1 +1,1 @@
-1[my gweee](`my gweee.jpg`)
+![my gweee](`my gweee.jpg`)
