@@ -12,10 +12,14 @@ class router
         // echo"{$method} {$uri}";
         if($method == 'GET' && $uri =='/students'){
             require_once './app/controllers/StudentsController.php';
+            $controller = new \App\controllers\StudentsController();
+            $controller->index();
             return;
         } 
         if($method == 'GET' && $uri =='/students/create'){
-
+            require_once './app/controllers/StudentsController.php';
+            $controller = new \App\controllers\StudentsController();
+            $controller->create();
             return;
         }
         http_response_code(404);
