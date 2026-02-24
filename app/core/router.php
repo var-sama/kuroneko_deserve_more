@@ -29,22 +29,11 @@ class router
                  $controller = new $controllerClass();
 
                  $function = $route['function'];
-                 $controller->$function(...array_slice($matches,1));
+                 call_user_func_array([$controller, $function], $matches);
             }
         }
-        // echo"{$method} {$uri}";
-        if($method == 'GET' && $uri =='/students'){
-            require_once './app/controllers/StudentsController.php';
-            $controller = new \App\controllers\StudentsController();
-            $controller->index();
-            return;
-        } 
-        if($method == 'GET' && $uri =='/students/create'){
-            require_once './app/controllers/StudentsController.php';
-            $controller = new \App\controllers\StudentsController();
-            $controller->create();
-            return;
-        }
+        // echo"{$method} {$uri}";//helll yeah just for fun u can type a 2 girl that crazy over each other and wanted to having scissor both of them, theres no way to stop them, they will do it even if they have to againts the fools god that also known as the idiot blind god, so just let them do it and enjoy the show
+
         http_response_code(404);
         echo "<h1> - page not found</h1>";
     }
