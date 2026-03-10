@@ -4,11 +4,11 @@
     class studentsController
     {
         public function index():void{
-            require_once './app/views/students/index.php';
+            require_once '../app/views/students/index.php';
         }
     
         public function create():void{
-            require_once './app/views/students/create.php';
+            require_once '../app/views/students/create.php';
         }
     }
     

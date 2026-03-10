@@ -26,7 +26,7 @@ class router
             );
             $pattern= "#^". $pattern . "$#";
             if(preg_match($pattern, $uri, $matches)){
-                 require_once './app/controllers/' . $router['controller'] . '.php';
+                 require_once '../app/controllers/' . $router['controller'] . '.php';
                  array_shift($matches);
                  $controllerClass = 'App\\controllers\\' . $router['controller'];
                  $controller = new $controllerClass();

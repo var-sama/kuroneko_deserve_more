@@ -1,6 +1,6 @@
 <?php
 
-require_once './app/core/router.php';
+require_once '../app/core/router.php';
 
 use App\core\Router;
 
