@@ -9,7 +9,7 @@
 <body>
     <h1 class="text-red-900">Tambah seto</h1>
     <p>Menampilkan form tambah seto</p>
-    <img src="/my-gweee.png" alt="gambar">
+    <img src="./assets/my-gweee.png">
 </body>
 </html>
 
