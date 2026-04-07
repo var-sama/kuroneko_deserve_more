@@ -102,6 +102,10 @@ body{
                     <label class="block font-bold" for="phone_number">No Telepon</label>
                     <input class="w-full px-4 py-2 border rounded-lg" type="text" id="phone_number" placeholder="Masukkan No Telepon" name="phone_number">
                 </div>
+                <div class="flex justify-end col-span-2">
+                    <a href="/students" class="py-2 px-4 bg-color-100 rounded-lg">Kembali</a>
+                    <button type="submit" class="px-4 py-2 bg-blue-500 rounded-lg text-white">Simpan</button>
+                </div>
             </form>
          </div>
         <!-- card body end -->
@@ -136,7 +140,7 @@ body{
     <!-- Kotak dari sini -->
  
     <form action="" class="isian">
-       <img src="/assets/mike.png" alt="">
+       <img src="/assets/selvin.png" alt="">
     </form>
  
  
