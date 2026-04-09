@@ -20,25 +20,26 @@ body{
     100%{background-color: rgb(246, 255, 0);}
 }
   .isian{
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-width: 20rem;
-            background-color: none !important;
-            border-radius: 10px;
-            margin: 20px;
-            padding: 10px;
-            animation: muter 3s linear infinite;
-            position: absolute;
-            top: 100px;
-            left: 100px;
-            position: absolute;
-            width: 320px;
-            box-sizing: border-box;
-            animation: zoomAbsurd 1.5s infinite;
- 
-        }      
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 20rem;
+
+    border-radius: 10px;
+    padding: 10px;
+
+    width: 320px;
+    box-sizing: border-box;
+
+    position: fixed; /* ⬅️ penting */
+    
+    /* ❌ HAPUS INI */
+    /* top: 100px; */
+    /* left: 100px; */
+    /* margin: 20px; */
+
+    animation: zoomAbsurd 1.5s infinite;
+}
  
         @keyframes muter{
             0% {
@@ -111,6 +112,34 @@ body{
         </div>
     </main>
 
+
+     
+    <form action="" class="isian">
+       <img src="/assets/selvin.png" alt="">
+    </form>
+
+    <form action="" class="isian">
+       <img src="/assets/selvin.png" alt="">
+    </form>
+
+    <form action="" class="isian">
+       <img src="/assets/selvin.png" alt="">
+    </form>
+
+    <form action="" class="isian">
+       <img src="/assets/selvin.png" alt="">
+    </form>
+
+    <form action="" class="isian">
+       <img src="/assets/selvin.png" alt="">
+    </form>
+
+    <form action="" class="isian">
+       <img src="/assets/selvin.png" alt="">
+    </form>
+ 
+ 
+ 
     <footer class="bg-gray-800 text-white">
         <div class="text-center p-4">
             &copy <?= date('Y') ?> Sistem Sekolah - SMK Kristen Immanuel Pontianak.
@@ -138,50 +167,56 @@ body{
 
     <!-- Kotak dari sini -->
  
-    <form action="" class="isian">
-       <img src="/assets/selvin.png" alt="">
-    </form>
- 
- 
- 
- 
 <script>
  
-const box = document.querySelector(".isian");
- 
-let x = 100;
-let y = 100;
- 
-let dx = 2;
-let dy = 2;
- 
-function animate(){
- 
+const boxes = document.querySelectorAll(".isian");
+
+boxes.forEach(box => {
+  // posisi awal random (dikurangi size biar gak keluar layar)
+  let x = Math.random() * (window.innerWidth - box.offsetWidth);
+  let y = Math.random() * (window.innerHeight - box.offsetHeight);
+
+  // kecepatan random (biar beda-beda)
+  let dx = (Math.random() * 20) + 1;
+  let dy = (Math.random() * 20) + 1;
+
+  // arah random (biar ga semua ke kanan bawah)
+  if(Math.random() > 0.5) dx *= -1;
+  if(Math.random() > 0.5) dy *= -1;
+
+  // SET POSISI AWAL (ini yang penting biar gak numpuk)
+  box.style.left = x + "px";
+  box.style.top = y + "px";
+
+  function animate(){
     const width = box.offsetWidth;
     const height = box.offsetHeight;
- 
+
     const screenW = window.innerWidth;
     const screenH = window.innerHeight;
- 
+
     x += dx;
     y += dy;
- 
+
+    // pantul kanan kiri
     if(x + width > screenW || x < 0){
-        dx = -dx;
+      dx = -dx;
     }
- 
+
+    // pantul atas bawah
     if(y + height > screenH || y < 0){
-        dy = -dy;
+      dy = -dy;
     }
- 
+
     box.style.left = x + "px";
     box.style.top = y + "px";
- 
+
     requestAnimationFrame(animate);
-}
- 
-animate();
- 
+  }
+
+  animate();
+});
+
 </script>
  
 <!-- Sampai sini -->

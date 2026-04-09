@@ -1,20 +1,22 @@
 <?php
-    namespace App\controllers;
+namespace App\controllers;
+require_once '../app/core/Controller.php';
 
-    class studentsController
+use App\Core\Controller;
+    class studentsController extends Controller
     {
         public function index():void{
-            require_once '../app/views/students/index.php';
+            $this->view('students.index');
         }
     
         public function create():void{
-            require_once '../app/views/students/create.php';
+            $this->view('students.create');
         }
         public function show(string $id):void{
-            require_once '../app/views/students/show.php';
+            $this->view('students.show');
         }
         public function edit(string $id):void{
-            require_once '../app/views/students/edit.php';
+            $this->view('students.edit');
         }
     }
     

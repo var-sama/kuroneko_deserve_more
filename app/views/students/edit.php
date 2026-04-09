@@ -153,8 +153,8 @@ const box = document.querySelector(".isian");
 let x = 100;
 let y = 100;
  
-let dx = 2;
-let dy = 2;
+let dx = 10;
+let dy = 10;
  
 function animate(){
  
@@ -164,15 +164,15 @@ function animate(){
     const screenW = window.innerWidth;
     const screenH = window.innerHeight;
  
-    x += dx;
-    y += dy;
+    x += dy;
+    y += dx;
  
     if(x + width > screenW || x < 0){
-        dx = -dx;
+        dy = -dy;
     }
  
     if(y + height > screenH || y < 0){
-        dy = -dy;
+        dx = -dx;
     }
  
     box.style.left = x + "px";
