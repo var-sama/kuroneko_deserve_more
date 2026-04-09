@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/output.css">
-    <title>Detail Siswa</title>
-</head>
-<body class="min-h-screen flex flex-col bg-gray-100">
 <style>
 body{
     animation: rgbBg 1s infinite;
@@ -68,14 +59,6 @@ body{
         }
  
 </style>
-    <header class="bg-cyan-500 text-black px-4">
-        <div class="flex items-center justify-between container mx-auto p-4 px-16">
-            <a href="/students" class="font-bold text-xl">Sistem Sekolah</a>
-            <a href="/students/create" class="bg-white text-blue-500 px-4 py-2 rounded-lg">+ Tambah Siswa</a>
-        </div>
-    </header>
-
-    <main class="container mx-auto grow p-16 space-y-10">
         <div class="mt-8 space-y-2">
         <!-- card start start -->
         <div class="p-4 shadow rounded-lg bg-white">
@@ -140,11 +123,6 @@ body{
  
  
  
-    <footer class="bg-gray-800 text-white">
-        <div class="text-center p-4">
-            &copy <?= date('Y') ?> Sistem Sekolah - SMK Kristen Immanuel Pontianak.
-        </div>
-    </footer>
     <!-- <style>
         .formulir{
             display: flex;
@@ -175,6 +153,7 @@ boxes.forEach(box => {
   // posisi awal random (dikurangi size biar gak keluar layar)
   let x = Math.random() * (window.innerWidth - box.offsetWidth);
   let y = Math.random() * (window.innerHeight - box.offsetHeight);
+  let rotateSpeed = (Math.random() * 10) - 5;
 
   // kecepatan random (biar beda-beda)
   let dx = (Math.random() * 20) + 1;
@@ -219,6 +198,3 @@ boxes.forEach(box => {
 
 </script>
  
-<!-- Sampai sini -->
-</body>
-</html>

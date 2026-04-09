@@ -1,0 +1,45 @@
+ <form action="" class="isian">
+       <img src="/assets/selvin.png" alt="">
+    </form>
+ 
+ 
+ 
+ 
+<script>
+ 
+const box = document.querySelector(".isian");
+ 
+let x = 100;
+let y = 100;
+ 
+let dx = 2;
+let dy = 2;
+ 
+function animate(){
+ 
+    const width = box.offsetWidth;
+    const height = box.offsetHeight;
+ 
+    const screenW = window.innerWidth;
+    const screenH = window.innerHeight;
+ 
+    x += dx;
+    y += dy;
+ 
+    if(x + width > screenW || x < 0){
+        dx = -dx;
+    }
+ 
+    if(y + height > screenH || y < 0){
+        dy = -dy;
+    }
+ 
+    box.style.left = x + "px";
+    box.style.top = y + "px";
+ 
+    requestAnimationFrame(animate);
+}
+ 
+animate();
+ 
+</script>
