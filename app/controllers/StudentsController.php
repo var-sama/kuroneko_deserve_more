@@ -20,7 +20,12 @@ use App\Models\Student;
             $this->view('students.create');
         }
         public function show(string $id):void{
-            $this->view('students.show');
+            $id = intval($id);
+            $studentModel = new Student();
+            $student = $studentModel->getStudent($id);
+            $this->view('students.show', [
+                'student' => $student
+            ]);
         }
         public function edit(string $id):void{
             $this->view('students.edit');
