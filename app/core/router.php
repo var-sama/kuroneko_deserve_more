@@ -1,7 +1,7 @@
 <?php
 namespace App\core;
 
-class route
+class router
 { 
     private array $routes=[];
     public function add(string $method, string $uri, string $controller, string $function): void{
