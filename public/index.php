@@ -12,5 +12,7 @@ $router->add('GET','/students/{id}','StudentsController','show');
 $router->add('GET','/students/{id}/edit','StudentsController','edit');
 
 $router->add('POST', '/students', 'StudentsController', 'store');
+$router->add('PUT', '/students/{id}', 'StudentsController', 'update');
+$router->add('DELETE', '/students/{id}', 'StudentsController', 'destroy');
 
 $router->run();

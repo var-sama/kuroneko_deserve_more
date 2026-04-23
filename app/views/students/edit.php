@@ -8,22 +8,23 @@
 
         <!-- card body start -->
          <div class="bg-white shadow rounded-lg p-4">
-            <form action="" class="grid grid-cols-2 gap-4">
+            <form action="/students/<?= $student['id']?>" method="POST" class="grid grid-cols-2 gap-4">
+                <input type="hidden" name="_method" value="PUT">
                 <div class="space-y-2 pt-2">
                     <label class="block font-bold" for="name">Nama</label>
-                    <input class="w-full px-4 py-2 border rounded-lg" type="text" id="name" placeholder="Masukkan Nama" name="name">
+                    <input value="<?= $student['name']?>" class="w-full px-4 py-2 border rounded-lg" type="text" id="name" placeholder="Masukkan Nama" name="name">
                 </div>
                 <div class="space-y-2 pt-2">
                     <label class="block font-bold" for="NIS">NIS</label>
-                    <input class="w-full px-4 py-2 border rounded-lg" type="text" id="NIS" placeholder="Masukkan NIS" name="NIS">
+                    <input value="<?= $student['nis']?>" class="w-full px-4 py-2 border rounded-lg" type="text" id="NIS" placeholder="Masukkan NIS" name="nis">
                 </div>
                 <div class="space-y-2 pt-2">
                     <label class="block font-bold" for="class">Kelas</label>
-                    <input class="w-full px-4 py-2 border rounded-lg" type="text" id="Class" placeholder="Masukkan kelas" name="Class">
+                    <input value="<?= $student['class']?>" class="w-full px-4 py-2 border rounded-lg" type="text" id="Class" placeholder="Masukkan kelas" name="class">
                 </div>
                 <div class="space-y-2 pt-2">
                     <label class="block font-bold" for="phone_number">No Telepon</label>
-                    <input class="w-full px-4 py-2 border rounded-lg" type="text" id="phone_number" placeholder="Masukkan No Telepon" name="phone_number">
+                    <input value="<?= $student['phone_number']?>" class="w-full px-4 py-2 border rounded-lg" type="text" id="phone_number" placeholder="Masukkan No Telepon" name="phone_number">
                 </div>
                 <div class="flex justify-end col-span-2">
                     <a href="/students" class="py-2 px-4 bg-color-100 rounded-lg">Kembali</a>
